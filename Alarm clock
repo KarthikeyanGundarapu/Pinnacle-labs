@@ -1,0 +1,16 @@
+import time
+import datetime
+
+def set_alarm(alarm_time):
+    while True:
+        current_time = datetime.datetime.now().strftime("%H:%M:%S")
+        if current_time == alarm_time:
+            print("Wake up! Alarm ringing...")
+            playsound("alarm.mp3")  # Replace with the path to your alarm sound
+            break
+        time.sleep(1)  # Check time every second
+
+if __name__ == "__main__":
+    alarm_time = input("Enter alarm time (HH:MM:SS format): ")
+    print(f"Alarm set for {alarm_time}")
+    set_alarm(alarm_time)
