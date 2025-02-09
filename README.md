@@ -1,6 +1,6 @@
 🎓 Pinnacle Labs Python devolopment Internship - Task Repository
 
-Welcome to the repository for my C Programming internship at Pinnacle Labs. Here, I’ll be documenting my progress and solutions for the assigned tasks throughout the internship.
+Welcome to the repository for my Python Development internship at Pinnacle Labs. Here, I’ll be documenting my progress and solutions for the assigned tasks throughout the internship.
 
 Each task will include:
 
