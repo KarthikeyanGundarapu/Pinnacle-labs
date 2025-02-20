@@ -1,0 +1,67 @@
+# Quiz Application
+
+def ask_question(question, options, correct_answer):
+    """
+    Ask a question, display options, and get user's answer.
+    Returns True if the answer is correct, False otherwise.
+    """
+    print("\n" + question)
+    for i, option in enumerate(options, 1):
+        print(f"{i}. {option}")
+    
+    while True:
+        try:
+            user_input = int(input("Enter the number of your answer: "))
+            if 1 <= user_input <= len(options):
+                return user_input == correct_answer
+            else:
+                print("Invalid choice. Please choose a valid option.")
+        except ValueError:
+            print("Please enter a valid number.")
+
+def main():
+    print("Welcome to the Quiz Application!")
+    print("Answer the following questions:\n")
+    
+    # List of questions, options, and the correct answers
+    quiz_data = [
+        {
+            "question": "What is the capital of France?",
+            "options": ["Berlin", "Madrid", "Paris", "Rome"],
+            "correct_answer": 3
+        },
+        {
+            "question": "Which programming language is known as the language of AI?",
+            "options": ["C", "Python", "Java", "Ruby"],
+            "correct_answer": 2
+        },
+        {
+            "question": "What is 5 + 3?",
+            "options": ["5", "8", "7", "9"],
+            "correct_answer": 2
+        }
+    ]
+    
+    score = 0
+    
+    # Loop through each question in the quiz
+    for data in quiz_data:
+        if ask_question(data["question"], data["options"], data["correct_answer"]):
+            print("Correct!")
+            score += 1
+        else:
+            print("Wrong answer!")
+    
+    print("\nQuiz Completed!")
+    print(f"Your final score is {score} out of {len(quiz_data)}")
+    
+    if score == len(quiz_data):
+        print("Excellent work!")
+    elif score >= len(quiz_data) / 2:
+        print("Good job! Keep practicing.")
+    else:
+        print("Better luck next time!")
+
+# Run the quiz
+if __name__ == "__main__":
+    main()
